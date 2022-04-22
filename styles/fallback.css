@@ -1,0 +1,10 @@
+* {box-sizing: border-box;}
+h1 {
+  margin: 10px 40px;
+}
+
+h3 {
+  font-size: 24px;
+  color: rgb(1, 19, 1);
+  margin: 20px;
+}
