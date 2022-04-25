@@ -100,14 +100,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-
-  document.addEventListener('keypress', e => {
-    if(e.keyCode === 13) {
-      let element = e.target as HTMLElement
-      if(element.classList.contains('backbtn')) {
-        history.back()
-        }
-    }
-  })
-  
 })

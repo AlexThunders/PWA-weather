@@ -1,3 +1,5 @@
+import "../styles/index.css"
+
 "use strict";
 const inputCity = document.getElementById('inputCity') as HTMLInputElement;
 const citySpan = document.getElementById('city') as HTMLSpanElement;
@@ -6,8 +8,18 @@ const result4Weather = document.getElementById('result4weather') as HTMLSpanElem
 const tempPar = document.getElementById('tempPar') as HTMLParagraphElement;
 const humidityPar = document.getElementById('humidity') as HTMLParagraphElement;
 const fieldset = document.getElementById('fieldset') as HTMLFieldSetElement
+const weatherIconPlace = document.querySelector('.weather-icon-place') as HTMLDivElement
 let icon = document.createElement('img');
 let city: string;
+
+console.log('test1')
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register("../../sw.js")
+    .then(reg => console.log("sw is registered", reg))
+    .catch(err => console.log("sw is not registered", err))
+}
+
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -60,10 +72,12 @@ export const fetchResult = (city: string) => {
     humidityPar.style.visibility = 'visible';
     let humidity = ` ${data?.currentConditions.humidity}`;
     humidityPar.innerText = `Humidity in ${capitalizeFirstLetter(city)} at ${data?.currentConditions.dayhour} is ${humidity}`;
-    icon.setAttribute('src', "https://ssl.gstatic.com/onebox/weather/64/cloudy.png");
+    icon.setAttribute('src', data?.currentConditions.iconURL);
     icon.setAttribute('alt', data?.currentConditions.comment)
-    icon.classList.add('icon');
-    fieldset.appendChild(icon)
+    icon.classList.add('weather-icon');
+    // fieldset.appendChild(icon)
+    weatherIconPlace.appendChild(icon)
+    weatherIconPlace.style.display = "block"
     text2read =`Temperature in ${city} is ${parseFloat(celcius)} celcius`;
     readResAloud(text2read);
   })

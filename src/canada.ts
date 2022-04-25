@@ -1,5 +1,6 @@
-import {readResAloud} from './weather.js'
-import { getCityFromClass, traverseChildrenToAddAttrubutes } from './helpers.js';
+import "../styles/index.css"
+import {readResAloud} from './index'
+import { getCityFromClass, traverseChildrenToAddAttrubutes } from './helpers';
 
 const allCities = Array.from(document.querySelectorAll('.city')) as HTMLDivElement[];
 const allIconSpots = Array.from(document.querySelectorAll('.icon-place')) as HTMLDivElement[];
@@ -7,11 +8,20 @@ const results4Weather = Array.from(document.querySelectorAll('.result4weather'))
 const icon = document.createElement('img');
 const cityNames:string[] = []
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register("../../sw.js")
+    .then(reg => console.log("sw is registered", reg))
+    .catch(err => console.log("sw is not registered", err))
+}
+
+
 allCities.forEach(city => {
   let title = getCityFromClass(city)
   cityNames.push(title)
 })
 
+
+console.log('test22')
 traverseChildrenToAddAttrubutes(allCities)
 
 const fetchCanadaWeather = (city: string) => {
@@ -62,6 +72,7 @@ const fetchCanadaWeather = (city: string) => {
         icon.classList.add('canada-icon');
         icon.setAttribute('src', data?.currentConditions.iconURL);
         iconSpot.appendChild(icon)
+        iconSpot.style.display = "block"
       }
     })
   })
@@ -75,6 +86,9 @@ const fetchCanadaWeather = (city: string) => {
 allCities.forEach(cityDiv => {
   cityDiv.addEventListener('click', (e) => {
     //clear previous results when click new city
+    allIconSpots.forEach(iconSpot => {
+      iconSpot.style.display = "none"
+    })
     icon.remove()
     results4Weather.forEach(res => {
       res.innerText = "";
@@ -87,8 +101,14 @@ allCities.forEach(cityDiv => {
 
 document.addEventListener('keypress', e => {
   if(e.keyCode === 13) {
+    allIconSpots.forEach(iconSpot => {
+      iconSpot.style.display = "none"
+    })
     let element = e.target as HTMLElement
-    if(element.classList.contains('backbtn')) return
+    if(element.classList.contains('backbtn')) {
+      history.go(-1)
+      return
+    }
     let cityTitle = getCityFromClass(element)
     const cityName = cityNames.filter(n => n.toLowerCase() === cityTitle)[0]
     fetchCanadaWeather(cityName)

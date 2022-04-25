@@ -7,16 +7,11 @@
   <meta name="theme-color" content="#2d862d">
   <title data="wTitle">Weather | About</title>
   <link rel="icon" href="../assets/icons/weatherIcon-96x96.svg">
-  <link rel="stylesheet" href="../styles/weather.css" type="text/css">
-  <link rel="stylesheet" href="../styles/canada.css" type="text/css">
-  <script type="module" src="../src/dist/canada.js" defer></script>
-  <script type="module" src="../src/dist/multiLang.js" defer></script>
-  <script src="../src/dist/extra.js" defer></script>
+  <script type="module" src="../dist/canada.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="manifest" href="../manifest.json">
-  <link rel="apple-touch-icon" href="../assets/icons/weather-icon-96x96.png">
-  <link rel="apple-touch-icon" href="../assets/icons/weather-icon-144x144.png">
-  <link rel="apple-touch-icon" href="../assets/icons/weather-icon-384x384.png">
+  <link rel="apple-touch-icon" href="../../assets/icons/weather-icon-96x96.png">
+  <link rel="apple-touch-icon" href="../../assets/icons/weather-icon-144x144.png">
+  <link rel="apple-touch-icon" href="../../assets/icons/weather-icon-384x384.png">
   <meta name="apple-mobile-web-app-status-bar" content="#40bf40">
 </head>
 <body>
@@ -25,55 +20,56 @@
       <option selected value="en">en</option>
       <option value="ru">ru</option>
     </select>
-    <a id="headerId" class="backbtn" onclick="() => {history.go(-1); return false;}" tabindex="0">
-      <img src="../assets/gobackicon.png" id="home_icon" alt="home_icon">
+    <a id="headerId" class="backbtn" onclick="history.go(-1); return false;" tabindex="0">
+      <img src="../../assets/gobackicon.png" id="home_icon" alt="home_icon">
     </a>
-    <a class="header-link" href="/">WEATHER</a>
+    <a class="header-link" href="../index.html">WEATHER</a>
   </header>
 
   <div class="main">
-      <h1>
-        <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/canadian-centre-climate-services.html">Canadian Centre for Climate Services</a>
-      </h1>
+    <h1>
+      <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/canadian-centre-climate-services.html">Canadian Centre for Climate Services</a>
+    </h1>
     <p> 
       The Canadian Centre for Climate Services (CCCS) is here to help Canadians plan for climate change. We deliver climate services driven by user needs, provide access to climate information, build local capacity, and offer training and support so you can make climate-smart decisions when planning for the future.
     </p>
     <p>Learn what is the weather like today in Canada's most beautiful cities</p>
+    
     <div class="grid">
     
       <div class="toronto city" tabindex="0">
         <h2 data-city="toronto">Toronto<span class="toronto cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/toronto.jpg" alt="toronto image"/>
+        <img src="../../assets/city-pics/toronto.webp" alt="toronto image"/>
         <div class="icon-place"></div>
       </div>
 
       <div class="vancouver city" tabindex="0">
         <h2 data-city="vancouver">Vancouver <span class="vancouver cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/vancouver.jpg" alt="toronto image" />
+        <img src="../../assets/city-pics/vancouver.webp" alt="vancouver image" />
         <div class="icon-place"></div>
       </div>
 
       <div class="montreal city" tabindex="0">
         <h2>Montreal <span class="montreal cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/montreal.webp" alt="toronto image" />
+        <img src="../../assets/city-pics/montreal.webp" alt="montreal image" />
         <div class="icon-place"></div>
       </div>
 
       <div class="edmonton city" tabindex="0">
         <h2>Edmonton <span class="edmonton cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/edmonton.jpg" alt="toronto image" />
+        <img src="../../assets/city-pics/edmonton.webp" alt="edmonton image" />
         <div class="icon-place"></div>
       </div>
 
       <div class="ottawa city" tabindex="0">
         <h2>Ottawa <span class="ottawa cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/ottawa.webp" alt="toronto image" />
+        <img src="../../assets/city-pics/ottawa.webp" alt="ottawa image" />
         <div class="icon-place"></div>
       </div>
 
       <div class="calgary city" tabindex="0">
         <h2>Calgary <span class="calgary cityspan result4weather"></span></h2>
-        <img src="../assets/city-pics/calgary.jpg" alt="toronto image" />
+        <img src="../../assets/city-pics/calgary.webp" alt="calgary image" />
         <div class="icon-place"></div>
       </div>
 

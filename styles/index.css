@@ -1,0 +1,629 @@
+.bg {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  min-width: 320px;
+  min-height: 500px;
+  max-width: 1440px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left bottom, left top, from(#276e27), to(#b2b2e6));
+  background: linear-gradient(to top, #276e27, #b2b2e6);
+  background-repeat: no-repeat;
+}
+
+.bg .intro {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 80%;
+  display: inline-block;
+  text-align: justify;
+  text-indent: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.3em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.bg .intro strong {
+  color: white;
+}
+
+.bg .intro strong:hover {
+  color: #d0d4f3;
+}
+
+.bg fieldset {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 10px auto;
+  padding: 10px;
+  margin: auto;
+  border: none;
+  display: none;
+}
+
+.bg fieldset .weather-icon-place {
+  position: absolute;
+  right: 10%;
+  top: 100px;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  background-color: green;
+  border-radius: 10px;
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .bg fieldset .weather-icon-place {
+    top: 80px;
+    width: 95px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .bg fieldset .weather-icon-place {
+    right: 10%;
+    top: 60px;
+    width: 130px;
+    height: 120px;
+  }
+}
+
+.bg fieldset .weather-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  border-radius: 15px;
+}
+
+.bg fieldset img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg fieldset input {
+  width: 180px;
+  margin: 10px 0 0;
+  font-size: 1.3em;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+@media screen and (min-width: 480px) {
+  .bg fieldset input {
+    width: 250px;
+  }
+}
+
+.bg fieldset .microphone {
+  font-size: 1.7em;
+  line-height: 1em;
+  margin: 20px 10px;
+  padding: 3px;
+  background: none;
+  border: none;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  outline: none;
+  cursor: pointer;
+}
+
+.bg fieldset .microphone:hover {
+  color: white;
+  text-shadow: 3px 1px 3px black;
+}
+
+.bg fieldset p, .bg fieldset span {
+  margin-top: 10px;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+.bg fieldset #tempPar, .bg fieldset #humidity {
+  visibility: hidden;
+  font-size: 1em;
+}
+
+.bg fieldset #city {
+  text-transform: capitalize;
+}
+
+.bg fieldset #submit {
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 130px;
+  font-size: 1.2em;
+  background-color: #a12929;
+  color: white;
+  font-style: normal;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.bg fieldset #submit:hover {
+  background-color: #e9cbcb;
+  color: #771414;
+}
+
+.bg fieldset #result4weather {
+  font-size: 1em;
+  margin: 0 0 0 10px;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.bg fieldset #result4weather:hover {
+  background-color: #9de4e0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main {
+  min-height: 1100px;
+  min-width: 320px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1440px;
+  background-color: #39823b;
+}
+
+.main h1 a {
+  margin: 10px;
+  color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.main h1 a:hover {
+  color: purple;
+}
+
+.main p {
+  margin: 30px 10px;
+  color: white;
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 20px;
+}
+
+.main .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  width: 100%;
+  min-width: 320px;
+  min-height: 700px;
+  max-width: 1440px;
+  gap: 10px;
+  margin: 10px auto;
+  padding: 0 15px;
+}
+
+.main .grid div {
+  height: 180px;
+  background-color: #0a2c00;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.main .grid div:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.main .grid div:hover h2 {
+  color: red;
+  font-size: 28px;
+}
+
+.main .grid div:active {
+  color: #e0d100;
+}
+
+.main .grid div h2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  text-align: center;
+  color: purple;
+  margin: 0;
+  padding: 5px;
+  z-index: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main .grid div h2 span {
+  color: red;
+}
+
+.main .grid div .result4weather {
+  margin: 0 20px;
+}
+
+.main .grid div img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.main .grid div .icon-place {
+  position: absolute;
+  top: 55px;
+  right: 30px;
+  width: 110px;
+  height: 110px;
+  background: none;
+  z-index: 1;
+  background-color: green;
+  border-radius: 10px;
+  display: none;
+}
+
+.main .grid div .canada-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  border-radius: 15px;
+}
+
+.toronto {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 1 / 1 / 3 / 5;
+}
+
+.vancouver {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 3 / 1 / 5 / 5;
+}
+
+.montreal {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 5 / 1 / 7 / 5;
+}
+
+.edmonton {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 7 / 1 / 9 / 5;
+}
+
+.ottawa {
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 9 / 1 / 11 / 5;
+}
+
+.calgary {
+  -ms-grid-row: 11;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 11 / 1 / 13 / 5;
+}
+
+@media screen and (min-width: 580px) {
+  .grid > div {
+    min-height: 230px;
+  }
+  .grid > div h2 {
+    left: 0;
+  }
+  .grid > div .icon-place {
+    top: 100px;
+    width: 100px;
+    height: 100px;
+  }
+  .main h1 a {
+    margin: 20px 40px;
+  }
+  .toronto {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 1 / 1 / 2/ 3;
+  }
+  .vancouver {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: 1 / 3 / 2/ 5;
+  }
+  .montreal {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 1 / 3/ 3;
+  }
+  .edmonton {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 3 / 3/ 5;
+  }
+  .ottawa {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 3 / 1 / 4/ 3;
+  }
+  .calgary {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: 3 / 3 / 4/ 5;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .grid > div {
+    min-height: 330px;
+  }
+  .grid > div h2 {
+    left: 30px;
+  }
+  .grid > div .icon-place {
+    top: 80px;
+    width: 140px;
+    height: 140px;
+  }
+  .toronto {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .vancouver {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: 1 / 2 / 2 / 5;
+  }
+  .montreal {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 1 / 3 / 3;
+  }
+  .edmonton {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 3 / 3 / 5;
+  }
+  .ottawa {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .calgary {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: 3 / 2 / 4 / 5;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .grid > div {
+    min-height: 460px;
+  }
+  .grid > div h2 {
+    left: 50px;
+  }
+  .toronto {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .vancouver {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: 1 / 2 / 2 / 5;
+  }
+  .montreal {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 2 / 1 / 3 / 4;
+  }
+  .edmonton {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 4 / 3 / 5;
+  }
+  .ottawa {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .calgary {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: 3 / 2 / 4 / 5;
+  }
+}
+
+h1 {
+  margin: 10px 40px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #011301;
+  margin: 20px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #39823b;
+}
+
+header {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: white;
+  text-shadow: 0 0 35px black,0 0 35px black,0 0 15px black, 0 0 15px black,0 0 15px black,0 0 35px black;
+  background-color: #111;
+  text-align: center;
+  opacity: .9;
+}
+
+header .langSelect {
+  opacity: .8;
+  margin-right: 0px;
+  z-index: 5;
+  background-color: #1f922f;
+  width: 40px;
+  text-align: center;
+}
+
+header .langSelect:hover {
+  opacity: 1;
+  background-color: #0ab120;
+}
+
+@media screen and (min-width: 1080px) {
+  header .langSelect {
+    width: 60px;
+    height: 20px;
+  }
+}
+
+header #home_icon {
+  margin: 0 30px 0 0;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  opacity: .7;
+}
+
+header #home_icon:hover {
+  opacity: 1;
+}
+
+header h1 {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin: 0;
+}
+
+header h1:hover {
+  -webkit-transition: .7s;
+  transition: .7s;
+  color: red;
+  text-shadow: 0 0 15px white,0 0 15px white,0 0 15px white, 0 0 15px white,0 0 15px white,0 0 15px white;
+}
+
+header .header-link {
+  margin: 10px 5px 10px 35px;
+  font-size: 25px;
+  font-family: sans-serif;
+  color: #ccb5d7;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+header .header-link:hover {
+  color: red;
+}
+/*# sourceMappingURL=index.css.map */
